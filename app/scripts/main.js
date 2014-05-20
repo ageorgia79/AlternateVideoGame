@@ -1,5 +1,5 @@
 function Ej () {
-  this.hp = 15;
+  this.hp = 20;
  
   this.primaryAttack = function(target) {
     target.hp = target.hp - 2;
@@ -16,10 +16,10 @@ function Ej () {
  
  
 function Enemy (level) {
-  this.hp = level * 10;
+  this.hp = level * 20;
  
   this.primaryAttack = function(target) {
-    target.hp = target.hp - (10 + level/4);
+    target.hp = target.hp - (2 + level/4);
   }
  
   this.specialAttack = function(target) {
@@ -34,9 +34,9 @@ $('.choose-ej').click(function(){
   player = new Ej();
   enemy = new Enemy(enemyLevel)
  
-  $('.choices').remove();
+  $('.monsters').remove();
  
-  $('.battle-menu').addClass('active');
+  $('.fightscreen').addClass('active');
  
   renderPlayerInfo(player);
   renderEnemyInfo(enemy);
